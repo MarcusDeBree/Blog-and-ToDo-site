@@ -1,0 +1,54 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="{% static 'css/blog_detail.css' %}">
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap" rel="stylesheet">
+	<title>Blog Page</title>
+</head>
+<body>
+	<header>
+		<div class="header">
+			<div class="name">
+				<h1>Thoughts of <br>ordinary person</h1>
+			</div>
+			<div class="logo">
+				<img src="{% static 'images/wolf.png' %}" width="125px">
+			</div>
+			<div class="menu">
+				<a href="/">Home</a>
+				<a href="to_do">To do</a>
+				<a href="about">About</a>
+				<a href="contacts">Contacts</a>
+			</div>
+		</div>
+	</header>
+	
+	<div class="container">
+		<div class="cards-pos">
+			<div class="card">
+				{% block  blogs %}
+				{% if blogs %}
+				<div class="image">
+					<img src="{% if blogs.picture %}{{ blogs.picture.url }}{% else %}#{% endif %}">
+				</div>
+				<h3>{{blogs.article_name}}</h3>
+				<p class="desc"> {{blogs.main_text}} </p>
+				<a href="../../" class="btn"> <p class="btn">Back to home page</p></a>
+				{% endif %}
+				{% endblock %}
+			</div>
+		</div>
+	</div>
+
+	<footer id="footer">
+		<div class="footer">
+			<p>Made by Ilya Shtoler</p>
+		</div>
+	</footer>
+</body>
+</html>

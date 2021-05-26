@@ -1,0 +1,100 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;700&display=swap" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="{% static 'css/to_do.css' %}">
+	<title>Blog Page</title>
+</head>
+<body>
+	<header>
+		<div class="header">
+			<div class="name">
+				<h1>Thoughts of <br>ordinary person</h1>
+			</div>
+			<div class="logo">
+				<img src="{% static 'images/wolf.png' %}" width="125px">
+			</div>
+			<div class="menu">
+				<a href="/">Home</a>
+				<a href="to_do">To do</a>
+				<a href="about">About</a>
+				<a href="contacts">Contacts</a>
+			</div>
+		</div>
+	</header>
+	
+	<div class="container">
+		<div class="cards-pos">
+			<div class="card">
+				<div class="date"><h4><span id="spanDate"></span></h4></div>
+				<h3>Task</h3>
+				<span class="task"><ul>
+					{% block  tasks%}
+					{% for i in tasks %}
+					<li>{{i.name_task}}</li> <input type="checkbox">
+					{% endfor %}
+					{% endblock %}
+				</ul></span>
+				<form class="form" id="form" action="" method="post">
+					{% csrf_token %}
+					{{ form }}
+					<input type="submit" value="Добавить">
+				</form>
+
+				<form action="{% url 'mainsite:delete_task' %}" class="delete_f" method="post">
+					{% csrf_token %}
+					<input type="submit" class="delete" value="Delete last task">
+				</form>
+				<span class="buttons">
+				<p class="btn btn1"><input type="button" value="Add Task" id="bton"></p>
+				<p class="btn btn2"><input type="button" value="Delete Task" id="bton"></p>
+				</span>
+			</div>
+		</div>
+	</div>
+
+	<footer id="footer">
+		<div class="footer">
+			<p>Made by Ilya Shtoler</p>
+		</div>
+	</footer>
+
+	<script type="text/javascript">
+		var popup = document.querySelector('form.form');
+		var open = document.querySelector('.btn1');
+
+		popup.style.display = 'none';
+
+		open.addEventListener('click', function() {
+		  if(popup.style.display == 'none') popup.style.display = 'block';
+		  else popup.style.display = 'none'
+		});
+	</script>
+	<script type="text/javascript">
+		var popup1 = document.querySelector('form.delete_f');
+		var open1 = document.querySelector('.btn2');
+
+		popup1.style.display = 'none';
+
+		open1.addEventListener('click', function() {
+		  if(popup1.style.display == 'none') popup1.style.display = 'block';
+		  else popup1.style.display = 'none'
+		});
+	</script>
+	<script type="text/javascript">
+		var months =
+			['January','February','March','April','May','June','July',
+			'August','September','October','November','December'];
+		var tomorrow = new Date();
+		tomorrow.setTime(tomorrow.getTime());
+		document.getElementById("spanDate").innerHTML =
+		months[tomorrow.getMonth()] + " " + tomorrow.getDate()+ " " +
+		tomorrow.getFullYear();
+	</script>
+</body>
+</html>

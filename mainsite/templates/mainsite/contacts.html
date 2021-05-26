@@ -1,0 +1,52 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;700&display=swap" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="{% static 'css/contacts.css' %}">
+	<link href="https://use.fontawesome.com/releases/v5.0.8/css/all.css" rel="stylesheet">
+	<title>Blog Page</title>
+</head>
+<body>
+	<header>
+		<div class="header">
+			<div class="name">
+				<h1>Thoughts of <br>ordinary person</h1>
+			</div>
+			<div class="logo">
+				<center>
+					<img src="{% static 'images/wolf.png' %}" width="125px">
+				</center>
+			</div>
+			<div class="menu">
+				<a href="/">Home</a>
+				<a href="to_do">To do</a>
+				<a href="about">About</a>
+				<a href="contacts">Contacts</a>
+			</div>
+		</div>
+	</header>
+	
+	<div class="container">
+		<div class="contacts">
+			<p class="git"><i class="fab fa-github"></i><a href="#">Github</a></p>
+			<p class="inst"><i class="fab fa-instagram"></i><a href="#">Instagram</a></p>
+			<p class="Facebook"><i class="fab fa-facebook-f"></i><a href="#">Facebook</a></p>
+			<p>Верстка завершена 1 апреля 2021 года</p>
+			<p>Бэкэнд завершен 6 апреля 2021 года</p>
+			<p>Общее время выполнения проекта ~ неделя</p>
+			<center><img src="{% static 'images/coffee.png' %}" width="200px"></center>
+		</div>
+	</div>
+
+	<footer id="footer">
+		<div class="footer">
+			<p>Made by Ilya Shtoler</p>
+		</div>
+	</footer>
+</body>
+</html>

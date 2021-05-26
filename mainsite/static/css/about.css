@@ -1,0 +1,102 @@
+body {
+  font-family: 'Noto Sans JP', sans-serif;
+  margin: 0px;
+  background-image: linear-gradient(#f7b370, #efa864);
+}
+
+
+* {
+  box-sizing: border-box;
+}
+
+a {
+  color: inherit;
+}
+
+.menu {
+    font-size: 18px;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #f7b370;
+  border-bottom: 3px solid black;
+  max-height: 125px;
+}
+
+.name {
+  margin: 0px;
+  padding-right: 20px;
+  padding-left: 10px;
+}
+
+.logo img {
+  height: 100px;
+  width: auto;
+}
+
+.menu {
+  display: flex;
+  justify-content: space-between;
+  font-size: 18px;
+  padding-right: 20px;
+}
+
+.menu a {
+  padding: 50px 10px;
+  text-decoration: none;
+  color: black;
+  margin: auto 0px;
+}
+
+.menu a:hover {
+  text-decoration: underline 3px;
+  border-radius: 5px;
+  -webkit-transform: scale(1.05);
+  -ms-transform: scale(1.05);
+  transform: scale(1.05);
+}
+
+.container {
+  font-size: 20px;
+  text-align: justify;
+}
+
+.about-me {
+  margin: 0px 20px;
+  padding: 2px 15px 5px 15px;
+  border-radius: 5px;
+  background-color: black;
+  color: white;
+}
+
+.edu {
+  background-color: #4a4a4a;
+  border-radius: 5px;
+  padding: 0px 5px;
+}
+
+.skills {
+  background-color: #ffffa6;
+  border-radius: 5px;
+  padding: 0px 5px;
+  color: black;
+}
+
+
+#footer {
+  position:relative;
+  bottom:0;
+  width:100%;
+}
+
+.footer {
+  text-align: center;
+  margin: 5px;
+  padding: 20px;
+  font-size: 18px;
+  color: black;
+  border: 2px solid black;
+}

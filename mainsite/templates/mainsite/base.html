@@ -1,0 +1,41 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+	<title>Blog Page</title>
+</head>
+<body>
+	<header>
+		<div class="header">
+			<div class="name">
+				<h1>Thoughts of <br>ordinary person</h1>
+			</div>
+			<div class="logo">
+				<img src="{% static 'images/wolf.png' %}" width="125px">
+			</div>
+			<div class="menu">
+				<a href="/">Home</a>
+				<a href="to_do">To do</a>
+				<a href="about">About</a>
+				<a href="contacts">Contacts</a>
+			</div>
+		</div>
+	</header>
+
+	<form class="form" id="form" action="" method="post" enctype='multipart/form-data'>
+		{% csrf_token %}
+		{{ blog_form.as_p }}
+		<input type="submit" value="Добавить">
+	</form>
+
+	<footer id="footer">
+		<div class="footer">
+			<p>Made by Ilya Shtoler</p>
+		</div>
+	</footer>
+</body>
+</html>

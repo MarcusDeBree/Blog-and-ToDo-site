@@ -1,0 +1,90 @@
+body {
+  font-family: 'Noto Sans JP', sans-serif;
+  margin: 0px;
+  background-image: linear-gradient(#f7b370, #efa864);
+}
+
+
+* {
+  box-sizing: border-box;
+}
+
+a {
+  color: inherit;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #f7b370;
+  border-bottom: 3px solid black;
+  max-height: 125px;
+}
+
+.name {
+  margin: 0px;
+  padding-right: 20px;
+  padding-left: 10px;
+}
+
+.logo img {
+  height: 100px;
+  width: auto;
+}
+
+.menu {
+  display: flex;
+  justify-content: space-between;
+  font-size: 18px;
+  padding-right: 20px;
+}
+
+.menu a {
+  padding: 50px 10px;
+  text-decoration: none;
+  color: black;
+  margin: auto 0px;
+}
+
+.menu a:hover {
+  text-decoration: underline 3px;
+  border-radius: 5px;
+  -webkit-transform: scale(1.05);
+  -ms-transform: scale(1.05);
+  transform: scale(1.05);
+}
+
+.container {
+  font-size: 20px;
+  text-align: justify;
+}
+
+.contacts {
+  margin: 20px;
+  justify-content: center;
+  text-align:center;
+  border: 2px solid black;
+  background-color: white;
+  border-radius: 5px;
+}
+
+.fab {
+  padding-right: 10px;
+}
+
+
+#footer {
+  position:relative;
+  bottom:0;
+  width:100%;
+}
+
+.footer {
+  text-align: center;
+  margin: 5px;
+  padding: 20px;
+  font-size: 18px;
+  color: black;
+  border: 2px solid black;
+}
